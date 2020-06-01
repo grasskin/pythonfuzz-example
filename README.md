@@ -13,10 +13,12 @@ LD_PRELOAD=/lib/clang/9/lib/linux/libclang_rt.asan-x86_64.so bazel build -s --co
 
 Command:
 
-```bazel build -s --copt=-fsanitize=address --linkopt=-fsanitize=address  module:math_test
+```
+bazel build -s --copt=-fsanitize=address --linkopt=-fsanitize=address  module:math_test
 ```
 Leads to
-```undefined symbol: __asan_option_detect_stack_use_after_return
+```
+undefined symbol: __asan_option_detect_stack_use_after_return
 ```
 
 A simple math pybind11 example that exports C++ functions to Python with Bazel.
