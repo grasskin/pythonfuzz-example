@@ -1,0 +1,56 @@
+
+=================================================================
+==170123==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 12 byte(s) in 1 object(s) allocated from:
+    #0 0x7f4b425cbcbd in malloc (/lib/clang/9/lib/linux/libclang_rt.asan-x86_64.so+0xc1cbd)
+    #1 0x561a91ed79af in xmalloc (/usr/bin/bash+0x8e9af)
+
+SUMMARY: AddressSanitizer: 12 byte(s) leaked in 1 allocation(s).
+
+=================================================================
+==170132==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 12 byte(s) in 1 object(s) allocated from:
+    #0 0x7f4b425cbcbd in malloc (/lib/clang/9/lib/linux/libclang_rt.asan-x86_64.so+0xc1cbd)
+    #1 0x561a91ed79af in xmalloc (/usr/bin/bash+0x8e9af)
+
+SUMMARY: AddressSanitizer: 12 byte(s) leaked in 1 allocation(s).
+Loading: 
+Loading: 0 packages loaded
+Analyzing: target //module:math_test (0 packages loaded, 0 targets configured)
+Analyzing: target //module:math_test (12 packages loaded, 18 targets configured)
+Analyzing: target //module:math_test (12 packages loaded, 18 targets configured)
+INFO: Call stack for the definition of repository 'local_config_python' which is a python_configure (rule definition at /usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/py/python_configure.bzl:293:20):
+ - <builtin>
+ - /usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/WORKSPACE:15:1
+ERROR: An error occurred during the fetch of repository 'local_config_python':
+   Traceback (most recent call last):
+	File "/usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/py/python_configure.bzl", line 290
+		_create_local_python_repository(<1 more arguments>)
+	File "/usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/py/python_configure.bzl", line 256, in _create_local_python_repository
+		_check_python_bin(<2 more arguments>)
+	File "/usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/py/python_configure.bzl", line 221, in _check_python_bin
+		_fail(<1 more arguments>)
+	File "/usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/py/python_configure.bzl", line 28, in _fail
+		fail(<1 more arguments>)
+Python Configuration Error: --define PYTHON_BIN_PATH='/usr/local/google/home/grasskin/SmallTest/bin/python3' is not executable. Is it the python binary?
+INFO: Call stack for the definition of repository 'remote_java_tools_linux' which is a http_archive (rule definition at /usr/local/google/home/grasskin/.cache/bazel/_bazel_grasskin/411909ba0d699f0820e0ca461410a7ee/external/bazel_tools/tools/build_defs/repo/http.bzl:296:16):
+ - <builtin>
+ - /usr/local/google/home/grasskin/.cache/bazel/_bazel_grasskin/411909ba0d699f0820e0ca461410a7ee/external/bazel_tools/tools/build_defs/repo/utils.bzl:201:9
+ - /DEFAULT.WORKSPACE.SUFFIX:179:1
+ERROR: /usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/python_runtime/BUILD:5:1: //third_party/python_runtime:headers depends on @local_config_python//:python_headers in repository @local_config_python which failed to fetch. no such package '@local_config_python//': Traceback (most recent call last):
+	File "/usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/py/python_configure.bzl", line 290
+		_create_local_python_repository(<1 more arguments>)
+	File "/usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/py/python_configure.bzl", line 256, in _create_local_python_repository
+		_check_python_bin(<2 more arguments>)
+	File "/usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/py/python_configure.bzl", line 221, in _check_python_bin
+		_fail(<1 more arguments>)
+	File "/usr/local/google/home/grasskin/SmallTest/bazel_stuff/pybind_example/third_party/py/python_configure.bzl", line 28, in _fail
+		fail(<1 more arguments>)
+Python Configuration Error: --define PYTHON_BIN_PATH='/usr/local/google/home/grasskin/SmallTest/bin/python3' is not executable. Is it the python binary?
+ERROR: Analysis of target '//module:math_test' failed; build aborted: Analysis failed
+INFO: Elapsed time: 4.456s
+INFO: 0 processes.
+FAILED: Build did NOT complete successfully (20 packages loaded, 129 targets configured)
+FAILED: Build did NOT complete successfully (20 packages loaded, 129 targets configured)
