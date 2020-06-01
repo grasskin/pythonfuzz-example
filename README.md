@@ -1,8 +1,4 @@
-# pythonfuzz_example
-
-Pythonfuzz example with bazel build and pybind.
-
-Built on https://github.com/av8ramit/pybind_example
+# pybind_example
 A simple math pybind11 example that exports C++ functions to Python with Bazel.
 
 ```bash
